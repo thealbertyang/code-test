@@ -7,23 +7,23 @@ https://gigasavvy.thealbertyang.com/
 I built the front end with React to allow for simplification of data processing between components and with the server. I used [webpack and laravel mix](./webpack.mix.js) to compile my javascript and sass. Then the entry point to these files were placed within their respective scopes in [welcome.blade.php](./resources/views/welcome.blade.php).
 
 ## Sass
-For the styling and responsiveness I utilized sass located at [app.scss](./resources/assets/css/app.scss) paired with bootstrap.
+For the styling and responsiveness I utilized sass located at [app.scss](./resources/assets/sass/app.scss) paired with bootstrap.
 
 ## React 
 
 First, I converted the mockup to several different components:
 
   + [App](./resources/assets/js/app.jsx) 
-  + [Header](./resources/assets/js/components/HeaderComponents.jsx)
-  + [Hero](./resources/assets/js/components/HeroComponents.jsx)
-  + [Panel](./resources/assets/js/components/HeaderComponents.jsx)
-  + [Form](./resources/assets/js/components/HeaderComponents.jsx)
+  + [Header](./resources/assets/js/components/HeaderComponent.jsx)
+  + [Hero](./resources/assets/js/components/HeroComponent.jsx)
+  + [Panel](./resources/assets/js/components/HeaderComponent.jsx)
+  + [Form](./resources/assets/js/components/HeaderComponent.jsx)
   
 ### App
 This main component houses all the other components and instantiates Redux.
 
-- [store](./store.jsx) - saves all the states into one file. 
-- [reducers/index](./reducers/index.jsx) - combines the form reducer and other future reducers in to one object.
+- [store](./resources/assets/js/store.jsx) - saves all the states into one file. 
+- [reducers/index](./resources/assets/js/reducers/index.jsx) - combines the form reducer and other future reducers in to one object.
 
 ### Header
 The component accepts a scrollTop position prop, which determines whether to apply `.navbar__scrolled` animation to the navbar logo.
@@ -67,7 +67,7 @@ I used `php artisan` to create, refresh and migrate the database. The [database 
 In the [api routes file](./routes/api.php) I directed any http POSTS at `/contact` to `ContactsController@store`.
 
 ### Controller
-The [ContactsController](./app/Http/Controllers/ContactController.php) contains the CRUD methods. It extends the [ApiFormController](./app/Http/Controllers/ApiFormController.php) which provides methods to send back http responses. This is an example of the single responsibilty principle by separating the contact controller and form API responses. 
+The [ContactsController](./app/Http/Controllers/ContactsController.php) contains the CRUD methods. It extends the [ApiFormController](./app/Http/Controllers/ApiFormController.php) which provides methods to send back http responses. This is an example of the single responsibilty principle by separating the contact controller and form API responses. 
 
 #### Step 1: Validation
 
